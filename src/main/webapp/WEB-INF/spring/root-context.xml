@@ -16,7 +16,7 @@
     <!-- <property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/book_ex"></property> -->
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="driverClassName" value="core.log.jdbc.driver.MysqlDriver"></property>
         <property name="url" value="jdbc:mysql://127.0.0.1:3306/book_ex"></property>
         <property name="username" value="root"></property>
         <property name="password" value="1111"></property>

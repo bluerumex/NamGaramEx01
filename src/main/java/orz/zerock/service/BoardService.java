@@ -3,6 +3,8 @@ package orz.zerock.service;
 import java.util.List;
 
 import orz.zerock.domain.BoardVO;
+import orz.zerock.domain.Criteria;
+import orz.zerock.domain.SearchCriteria;
 
 public interface BoardService {
 
@@ -10,9 +12,20 @@ public interface BoardService {
 
     public BoardVO read(Integer bno) throws Exception;
 
-    public void modify(BoardVO vo) throws Exception;
+    public void update(BoardVO vo) throws Exception;
 
     public void remove(Integer bno) throws Exception;
 
     public List<BoardVO> listAll() throws Exception;
+
+    public List<BoardVO> listCriteria(Criteria cri) throws Exception;
+
+    public int listCountCriteria(Criteria cri) throws Exception;
+
+    public void modify(BoardVO vo) throws Exception;
+
+    public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception;
+
+    public int listSearchCount(SearchCriteria cri) throws Exception;
+
 }

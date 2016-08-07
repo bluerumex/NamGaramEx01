@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import orz.zerock.domain.BoardVO;
+import orz.zerock.domain.Criteria;
+import orz.zerock.domain.SearchCriteria;
 import orz.zerock.persistence.BoardDAO;
 
 @Service
@@ -26,7 +28,7 @@ public class BoardServicImpl implements BoardService {
     }
 
     @Override
-    public void modify(BoardVO vo) throws Exception {
+    public void update(BoardVO vo) throws Exception {
         dao.update(vo);
     }
 
@@ -38,6 +40,31 @@ public class BoardServicImpl implements BoardService {
     @Override
     public List<BoardVO> listAll() throws Exception {
         return dao.listAll();
+    }
+
+    @Override
+    public List<BoardVO> listCriteria(Criteria cri) throws Exception {
+        return dao.listCriteria(cri);
+    }
+
+    @Override
+    public int listCountCriteria(Criteria cri) throws Exception {
+        return dao.countPaging(cri);
+    }
+
+    @Override
+    public void modify(BoardVO vo) throws Exception {
+        dao.modify(vo);
+    }
+
+    @Override
+    public List<BoardVO> listSearchCriteria(SearchCriteria cri) throws Exception {
+        return dao.listSearch(cri);
+    }
+
+    @Override
+    public int listSearchCount(SearchCriteria cri) throws Exception {
+        return dao.listSearchCount(cri);
     }
 
 }
